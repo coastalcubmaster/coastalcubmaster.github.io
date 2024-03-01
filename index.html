@@ -51,7 +51,7 @@
   </main>
   <script>
     // Fetch location data from GitHub using fetch API
-    fetch('https://api.github.com/repos/coastalcubmaster/coastalcubmaster.github.io/contents/data.json')
+    fetch('contents/data.json')
       .then(response => response.json())
       .then(data => {
         const locations = data.locations;
