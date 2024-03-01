@@ -26,4 +26,12 @@
     { "what": "Bike Rally", "loc": "any", "ideas" : ["field trip", "party"] },
     { "what": "Star Base - Ellington", "ideas" : ["camp"] },
     { "what": "Pine Gully Park", "loc": "Seabrook", "ideas" : ["field trip", "party", "hiking"] },    
-]}
+],
+"locations":[
+    "name": "Walter Hall Park",
+    "town": "League City",
+    "desc": "County Park in League City",
+    "activities": ["picnic", "hiking", "fishing", "field day", "Water Sports"],
+    "link": "https://leaguecitynature.com/parks/walter-hall-park/"
+]
+}
