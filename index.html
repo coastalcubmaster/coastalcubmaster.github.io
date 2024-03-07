@@ -3,27 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Coastal Cubmaster's Adventure Guide</title>
+  <title>Activities</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
     }
-    header {
-      background-color: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
     table {
       width: 100%;
       border-collapse: collapse;
+      margin-top: 20px;
     }
     th, td {
       padding: 8px;
-      text-align: left;
       border-bottom: 1px solid #ddd;
+      text-align: left;
     }
     th {
       background-color: #f2f2f2;
@@ -31,30 +26,49 @@
   </style>
 </head>
 <body>
-  <header>
-    <h1>Coastal Cubmaster's Adventure Guide</h1>
-  </header>
-  <main>
-    <table id="locations-table">
-      <thead>
-        <tr>
-          <th>Location</th>
-          <th>Description</th>
-          <th>Activities</th>
-          <th>Link</th>
-        </tr>
-      </thead>
-      <tbody id="locations-body">
-        <!-- Location data will be dynamically inserted here -->
-      </tbody>
-    </table>
-  </main>
+  <h1>Activities</h1>
+  <table id="activities-table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Location</th>
+        <th>Description</th>
+        <th>Link</th>
+      </tr>
+    </thead>
+    <tbody id="activities-body">
+      <!-- Activity data will be dynamically inserted here -->
+    </tbody>
+  </table>
+
   <script>
-    // Fetch location data from GitHub using fetch API
-    fetch('https://raw.githubusercontent.com/coastalcubmaster/coastalcubmaster.github.io/main/contents/data.json')
-      .then(response => response.json())
-	    .then(data => console.log(data))
-	    .catch(err => console.error(err));
+    // Sample activity data
+    const activities = [
+      { name: "Hiking", location: "Various", description: "Enjoy nature trails and scenic views.", link: "#" },
+      { name: "Fishing", location: "Lakes, rivers", description: "Cast a line and reel in the big one.", link: "#" },
+      { name: "Picnic", location: "Parks, beaches", description: "Relax and enjoy a meal in the great outdoors.", link: "#" },
+      { name: "Field Day", location: "Parks, schools", description: "Engage in team sports and games.", link: "#" },
+      // Add more activities here
+    ];
+
+    // Function to display activities in the table
+    function displayActivities() {
+      const activitiesTable = document.getElementById('activities-table');
+      const activitiesBody = document.getElementById('activities-body');
+      activities.forEach(activity => {
+        const row = document.createElement('tr');
+        row.innerHTML = `
+          <td>${activity.name}</td>
+          <td>${activity.location}</td>
+          <td>${activity.description}</td>
+          <td><a href="${activity.link}" target="_blank">Learn More</a></td>
+        `;
+        activitiesBody.appendChild(row);
+      });
+    }
+
+    // Call the function to display activities when the page loads
+    window.onload = displayActivities;
   </script>
 </body>
 </html>
