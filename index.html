@@ -26,13 +26,14 @@
   </style>
 </head>
 <body>
-  <h1>Activities</h1>
+  <h1>Coastal Cubmaster's Activity Page</h1>
   <table id="activities-table">
     <thead>
       <tr>
         <th>Name</th>
         <th>Location</th>
         <th>Description</th>
+        <th>Activities</th>
         <th>Link</th>
       </tr>
     </thead>
@@ -44,10 +45,10 @@
   <script>
     // Sample activity data
     const activities = [
-      { name: "Hiking", location: "Various", description: "Enjoy nature trails and scenic views.", link: "#" },
-      { name: "Fishing", location: "Lakes, rivers", description: "Cast a line and reel in the big one.", link: "#" },
-      { name: "Picnic", location: "Parks, beaches", description: "Relax and enjoy a meal in the great outdoors.", link: "#" },
-      { name: "Field Day", location: "Parks, schools", description: "Engage in team sports and games.", link: "#" },
+      { name: "Walter Hall Park", location: "League City TX", description: "County Park in League City.", activities: "picnic, hiking, fishing, field day, water sports", link: "https://leaguecitynature.com/parks/walter-hall-park/" },
+      { name: "Fishing", location: "Lakes, rivers", description: "Cast a line and reel in the big one.", activities: "fishing", link: "#" },
+      { name: "Picnic", location: "Parks, beaches", description: "Relax and enjoy a meal in the great outdoors.", activities: "picnic", link: "#" },
+      { name: "Field Day", location: "Parks, schools", description: "Engage in team sports and games.", activities: "field day", link: "#" },
       // Add more activities here
     ];
 
@@ -61,6 +62,7 @@
           <td>${activity.name}</td>
           <td>${activity.location}</td>
           <td>${activity.description}</td>
+          <td>${activity.activities}</td>
           <td><a href="${activity.link}" target="_blank">Learn More</a></td>
         `;
         activitiesBody.appendChild(row);
