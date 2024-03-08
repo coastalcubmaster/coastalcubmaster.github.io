@@ -233,10 +233,6 @@
     // Function to display activities in the table
     function displayActivities() {
       const sortedActivities = activities.sort((a, b) => {
-        // Sort by location first
-        if (a.location < b.location) return -1;
-        if (a.location > b.location) return 1;
-        // If locations are the same, sort by name
         if (a.name < b.name) return -1;
         if (a.name > b.name) return 1;
         return 0;
