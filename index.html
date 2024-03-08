@@ -49,21 +49,21 @@
         name: "Walter Hall Park", 
         location: "League City", 
         description: "County Park in League City.", 
-        activities: "picnic, hiking, fishing, field day, water sports", 
+        activities: ["picnic", "hiking", "fishing", "field day", "water sports"], 
         link: "https://leaguecitynature.com/parks/walter-hall-park/" 
       },
       {
       name: "West Bay Common School Museum",
       location: "League City",
       description: "Museum showcasing one-room schoolhouse history",
-      activities: "field trip",
+      activities: ["field trip"],
       link: "https://leaguecityhistory.org/one-room-schoolhouse"
     },
     {
       name: "Lynn Gripon at Countryside Park",
       location: "League City",
       description: "Park with picnic areas, trails, and fishing",
-      activities: "picnic, fishing, hiking, biking, water sports, field day",
+      activities: ["picnic", "fishing", "hiking", "biking", "water sports", "field day"],
       link: "https://leaguecitynature.com/parks/lynn-gripon-park-at-countryside/"
     },
       {
@@ -236,11 +236,12 @@
       const activitiesBody = document.getElementById('activities-body');
       activities.forEach(activity => {
         const row = document.createElement('tr');
+        const activitiesList = activity.activities.sort().join(', ');
         row.innerHTML = `
           <td>${activity.name}</td>
           <td>${activity.location}</td>
           <td>${activity.description}</td>
-          <td>${activity.activities}</td>
+          <td>${activitiesList}</td>
           <td><a href="${activity.link}" target="_blank">Learn More</a></td>
         `;
         activitiesBody.appendChild(row);
